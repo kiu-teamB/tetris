@@ -659,7 +659,6 @@ class Block_Controller(object):
                 self.writer.add_scalar('Train/Reward', self.epoch_reward, self.epoch - 1)   
                 self.writer.add_scalar('Train/block', self.tetrominoes, self.epoch - 1)  
                 self.writer.add_scalar('Train/clear lines', self.cleared_lines, self.epoch - 1) 
-
                 self.writer.add_scalar('Train/1 line', self.cleared_col[1], self.epoch - 1) 
                 self.writer.add_scalar('Train/2 line', self.cleared_col[2], self.epoch - 1) 
                 self.writer.add_scalar('Train/3 line', self.cleared_col[3], self.epoch - 1) 

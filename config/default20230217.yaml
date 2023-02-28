@@ -2,17 +2,17 @@
 common:
   #### 学習用Weight
   ## File 指定
-  ft_weight: outputs/2023-02-12-11-33-40/trained_model/best_weight.pt
+  ft_weight: outputs/2023-02-10-21-39-05/trained_model/best_weight.pt
   log_path: tensorboard
   time_disp: False
   #### 推論用Weight
   # File 指定
-  predict_weight: outputs/2023-02-12-11-33-40/trained_model/best_weight.pt
+  predict_weight: outputs/2023-02-10-21-39-05/trained_model/best_weight.pt
 
   #### 第2model 有効
   weight2_available: False
   #### 第2model
-  predict_weight2: outputs/2023-02-12-11-33-40/trained_model/best_weight.pt
+  predict_weight2: outputs/2023-02-10-21-39-05/trained_model/best_weight.pt
 
   #### model 切り替えポイント (最も高い穴の位置が下記より低いとき)
   predict_weight2_enable_index: 5
@@ -37,7 +37,7 @@ train:
   gamma: 0.8 # 割引率 ... t+1 の報酬をどの程度割り引いて考えるか (0 to 1.0)
   max_penalty: -1 # 正規化する場合の最小報酬 ( to 0)
   target_net: True #Target net, double_dqn 有効の場合は無条件で有効  (True False) 
-  target_copy_intarval: 300 # Target Net をロードする EPOCH 数間隔  (1 to num_epoch)
+  target_copy_intarval: 200 # Target Net をロードする EPOCH 数間隔  (1 to num_epoch)
   replay_memory_size: 30000  # (1 to num_epoch*10)
   double_dqn: True # Dobule DQN 有効化 #DQN限定 (True False)
   reward_clipping: True # 報酬を 1 で正規化、ただし消去報酬のみ
@@ -47,15 +47,15 @@ train:
 
   reward_list: #These parameter are not normalized. 消去報酬の配分
     - 0  #survival
-    - 0 #0 #1block
-    - 10 #2block
-    - 70 #3block
-    - 200 #4block
+    - 10 #0 #1block
+    - 50 #2block
+    - 1000 #3block
+    - 10000 #4block
     - -50 #game over
   height_line_reward: 100 #低いところの消去ほど有効とする設定(10000 くらいでほぼ無効 大きい値ほど報酬小さい)
   reward_weight: # 形状報酬の配分
     - 0.0005 #1 #bampiness 
-    - 0.01 #1 #max height
+    - 0.1 #1 #max height
     - 0.001 #1 #hole_num
   bumpiness_left_side_relax: 1 # 左端のでこぼこだけどこまで許容するか
   max_height_relax: 14 # 高さをどこまで許容するか(左記より大きい)
