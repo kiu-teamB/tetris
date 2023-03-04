@@ -1,0 +1,7 @@
+start...
+Finetuning mode
+Load outputs/2023-01-23-23-33-36/trained_model/best_weight.pt...
+Epoch: 1 / 10000, Score: -300,  block: 39,  Reward: -7.4 Cleared lines: 2
+Epoch: 2 / 10000, Score: -500,  block: 30,  Reward: -6.2 Cleared lines: 0
+Epoch: 3 / 10000, Score: 100,  block: 44,  Reward: -7.7 Cleared lines: 5
+Epoch: 4 / 10000, Score: -400,  block: 35,  Reward: -5.2 Cleared lines: 1
